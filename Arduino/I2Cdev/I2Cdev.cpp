@@ -722,8 +722,8 @@ uint16_t I2Cdev::readTimeout = I2CDEV_DEFAULT_READ_TIMEOUT;
         #if defined(__AVR_ATmega168__) || defined(__AVR_ATmega8__) || defined(__AVR_ATmega328P__)
             // activate internal pull-ups for twi (PORTC bits 4 & 5)
             // as per note from atmega8 manual pg167
-            if (pullup) PORTC |= ((1 << 4) | (1 << 5));
-            else        PORTC &= ~((1 << 4) | (1 << 5));
+            if (pullup) PORTD |= ((1 << 20) | (1 << 21));
+            else        PORTD &= ~((1 << 20) | (1 << 21));
         #elif defined(__AVR_ATmega644P__) || defined(__AVR_ATmega644__)
             // activate internal pull-ups for twi (PORTC bits 0 & 1)
             if (pullup) PORTC |= ((1 << 0) | (1 << 1));
